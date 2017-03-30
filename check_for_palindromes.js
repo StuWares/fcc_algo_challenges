@@ -2,41 +2,39 @@
 
 // Return true if the given string is a palindrome. Otherwise, return false.
 
-// convert the sting to an array, cut it in half, reverse one then compare?
-
 function palindrome(str) {
   var lowerCase = "";
   var noSpecials = "";
   var oddEvenTest = 0;
   var splitHalf = [];
-  var pinchTo = [];
+  var popTo = [];
   var shiftTo = [];
+  var arrLength = 0;
   
   // turns the argument into an array with only alphanumerics
   lowerCase = str.toLowerCase();
   noSpecials = lowerCase.match( /[a-z0-9]/gi );	
+  arrLength = noSpecials.length;
   
-  /* compares first and last letters in the array, then works inwards
+/* compares first and last letters in the array, then works inwards
   returns false if no match found at any point, true if all parts are checked and
   found to match  */
- if (noSpecials.length > 1) {
- 	for ( i = 0; i < noSpecials.length; i++) {
- 		pinchTo = noSpecials.pinch();
+ 
+ 	for ( i = 0; i < arrLength; i++) {
+      if (noSpecials.length > 1) {
+ 		popTo = noSpecials.pop();
  		shiftTo = noSpecials.shift();
-
- 		if (pinchTo !== shiftTo) {
+      
+ 		if (popTo !== shiftTo) {
  			return false;
  		}
- 	}
+ 	} else {
+      return true;
+    }
 
- } else {
- 	return true;
- } 
+    }
 
   
   // no need for return here
 }
-
-
-
-palindrome("e#ye");
+palindrome("eye");
