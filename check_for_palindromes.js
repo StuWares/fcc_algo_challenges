@@ -16,6 +16,9 @@ function palindrome(str) {
   lowerCase = str.toLowerCase();
   noSpecials = lowerCase.match( /[a-z0-9]/gi );	
   
+  /* compares first and last letters in the array, then works inwards
+  returns false if no match found at any point, true if all parts are checked and
+  found to match  */
  if (noSpecials.length > 1) {
  	for ( i = 0; i < noSpecials.length; i++) {
  		pinchTo = noSpecials.pinch();
@@ -31,7 +34,7 @@ function palindrome(str) {
  } 
 
   
-  return ; // variable here must be a boolean
+  // no need for return here
 }
 
 
