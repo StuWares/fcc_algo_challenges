@@ -5,8 +5,6 @@
 function palindrome(str) {
   var lowerCase = "";
   var noSpecials = "";
-  var oddEvenTest = 0;
-  var splitHalf = [];
   var popTo = [];
   var shiftTo = [];
   var arrLength = 0;
