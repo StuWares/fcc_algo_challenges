@@ -18,9 +18,13 @@ function findLongestWord(str) {
 		return val.length;
 	});
 
+	wordLengths = wordLengths.sort(function(a, b) {
+		return a - b;
+	});
 
 
-  return str.length;
+
+  return wordLengths.pop();
 }
 
 findLongestWord("The quick brown fox jumped over the lazy dog");
