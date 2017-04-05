@@ -4,19 +4,27 @@
 into groups the length of size (second argument) and returns
 them as a two-dimensional array. */
 
-/* slice arr size times and push the return value into a new array*/
+/* splice arr size times and push the return value into a new array*/
 
 
-// works unless size is greater than the array, returns empty arrays
 function chunkArrayInGroups(arr, size) {
   var choppedUp = [];
-
-  for (i = 0; i < size; i++) {
-  	choppedUp.push(arr.splice(0, size));
+  var loopSize = 0;
+      
+  // if statement required to get the correct number of loops
+  if (arr.length % size === 0) {
+    loopSize = Math.floor(arr.length/size);
+  } else {
+    loopSize = Math.floor(arr.length/size) + 1;
   }
 
-
-  return choppedUp;
+  // splice rather than slice gives more simple indexing i.e. start point is
+  // always 0
+  for (i = 0; i < loopSize; i++) {
+    
+  	choppedUp.push(arr.splice(0, size));
+    
+  }
+ return choppedUp;
 }
-
-chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3); 
+chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6], 3); 
