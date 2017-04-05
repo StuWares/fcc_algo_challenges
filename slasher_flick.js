@@ -7,10 +7,14 @@ The head means the beginning of the array, or the zeroth index.*/
 // straightforward slice/splice?
 
 function slasher(arr, howMany) {
+  var slashedUp = [];
   
-
+  slashedUp = arr.splice(howMany);
   
-  return arr;
+  
+  return slashedUp;
 }
 
 slasher([1, 2, 3], 2);
+
+// easiest one so far!?
