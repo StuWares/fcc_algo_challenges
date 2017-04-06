@@ -23,13 +23,23 @@ str.indexOf(searchValue[, fromIndex])
 
 function mutation(arr) {
   var mutated = [];
-  
-  
+  var checkThis = [];
+  var againstThis = [];
+  var checkResults = [];
 
   for (var i = 0; i < arr.length; i++) {
   	mutated.push(arr[i].toLowerCase());
   }
   
+  checkThis = mutated[1].split("");
+  againstThis = mutated[0].split("");
+  
+  for (var j = 0; j < checkThis.length; j++) {
+    checkResults.push(againstThis[j].indexOf(checkThis[j]));
+  }
+ 
+ // now need to look for -1 in check results, return false if found, true if not
+  return checkResults;
   
 }
 
