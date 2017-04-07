@@ -15,6 +15,8 @@ letters in "line" are present in "Alien". */
 /* 
 more complex than I'd originally thought!
 need to compare each letter individually?
+Didn't read the original problem properly,
+it was actuall quite straightforward in the end!
 
 set all to lower case
 str.indexOf(searchValue[, fromIndex])
@@ -22,25 +24,15 @@ str.indexOf(searchValue[, fromIndex])
 
 
 function mutation(arr) {
-  var mutated = [];
-  var checkThis = [];
-  var againstThis = [];
-  var checkResults = [];
+  var checkThis = arr[1].toLowerCase();
+  var againstThis = arr[0].toLowerCase();
+  
+  for (i = 0; i < checkThis.length; i++) {
+    if (againstThis.indexOf(checkThis[i] < 0) 
+      return false;
+    
+  } 
+   return true;
+} 
 
-  for (var i = 0; i < arr.length; i++) {
-  	mutated.push(arr[i].toLowerCase());
-  }
-  
-  checkThis = mutated[1].split("");
-  againstThis = mutated[0].split("");
-  
-  for (var j = 0; j < checkThis.length; j++) {
-    checkResults.push(againstThis[j].indexOf(checkThis[j]));
-  }
- 
- // now need to look for -1 in check results, return false if found, true if not
-  return checkResults;
-  
-}
-
-mutation(["Hello", "hey"]);
+mutation(["hello", "hey"]);
